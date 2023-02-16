@@ -89,13 +89,12 @@ namespace BST
         }
         public void displayTree(TreeNode<T> root)
         {
-            if (root == null)
+            if (root != null)
             {
-                return;
-            }            
-            displayTree(root.left);
-            System.Console.Write(root.data + " ");
-            displayTree(root.right);
+                displayTree(root.left);
+                Console.Write(root.data + " ");
+                displayTree(root.right);
+            }
         }
         public int size(TreeNode<T> root)
         {
