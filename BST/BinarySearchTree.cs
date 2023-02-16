@@ -10,11 +10,13 @@ namespace BST
     {
 
         public TreeNode<T> root;
+        public int count = 0;
         public void insert(T item)
         {
             if (root == null)
             {
                 root = new TreeNode<T>(item);
+                count++;
             }
             TreeNode<T> temp = root;
             while (temp != null)
@@ -28,6 +30,7 @@ namespace BST
                     else
                     {
                         temp.left = new TreeNode<T>(item);
+                        count++;
                         break;
                     }
                 }
@@ -40,6 +43,7 @@ namespace BST
                     else
                     {
                         temp.right = new TreeNode<T>(item);
+                        count++;
                         break;
                     }
                 }
@@ -48,6 +52,10 @@ namespace BST
                     return;
                 }
             }
+        }
+        public int Size()
+        {
+            return count;
         }
         public void displayTree(TreeNode<T> root)
         {
@@ -59,5 +67,16 @@ namespace BST
             System.Console.Write(root.data + " ");
             displayTree(root.right);
         }
+        public int size(TreeNode<T> root)
+        {
+            if (root == null)
+            {
+                return 0;
+            }
+            int leftSize = size(root.left);
+            int rightSize = size(root.right);
+            return leftSize + rightSize + 1;
+        }
+
     }
 }
