@@ -26,7 +26,8 @@ namespace BST
             binarySearch.insert(63);
             binarySearch.insert(67);
             binarySearch.displayTree(binarySearch.root);
-            Console.WriteLine("\nTotal Number of elements =" + binarySearch.Size());          
+            Console.WriteLine("\nTotal Number of elements =" + binarySearch.Size());
+            binarySearch.isExists(63, binarySearch.root);
             Console.ReadLine();
         }
     }

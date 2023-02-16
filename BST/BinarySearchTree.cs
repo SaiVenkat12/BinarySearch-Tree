@@ -57,6 +57,36 @@ namespace BST
         {
             return count;
         }
+        public TreeNode<T> Search(T data, TreeNode<T> root)
+        {
+           if(root==null)
+            {
+                return null;
+            }
+            else if (data.CompareTo(root.data) < 0)
+            {
+                return Search(data, root.left);
+            }
+           else if (data.CompareTo(root.data) > 0)
+            {
+                return Search(data, root.right);
+            }
+            else
+            {
+                return root;
+            }
+        }
+        public void isExists(T data, TreeNode<T> root)
+        {
+            TreeNode<T> node = Search(data, root);
+            if (node != null)
+            {
+                
+                Console.WriteLine("Element Found :" + node.data);
+            }
+            else
+                Console.WriteLine("Element {0} is not Found ", data);
+        }
         public void displayTree(TreeNode<T> root)
         {
             if (root == null)
